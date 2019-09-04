@@ -3,8 +3,9 @@ const bodyParser = require('body-parser');
 const CORS = require('cors');
 
 const app = express();
-
+//body parser
 app.use(bodyParser.json());
+//cors
 app.use(CORS());
 
 const movies = [

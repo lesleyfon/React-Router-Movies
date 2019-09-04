@@ -14,11 +14,11 @@ const App = () => {
   return (
     <div>
       <SavedList list={savedList} />
-      <div>Replace this Div with your Routes</div>
-      <Route path='/' component = {MovieList}/>
+      {/* <div>Replace this Div with your Routes</div> */}
+      <Route  exact path='/' component = {MovieList}/>
       <Route 
         exact
-        path='/movie/:movieId' 
+        path='/movies/:moviesId' 
         component = {Movie} />
     </div>
   );
