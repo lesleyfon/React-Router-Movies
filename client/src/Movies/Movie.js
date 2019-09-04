@@ -18,22 +18,16 @@ const Movie = (props) => {
 
   },[props.match.params.moviesId]);
 
-  // Uncomment this only when you have moved on to the stretch goals
-
   const saveMovie = () => {
-    console.log(props)
     const addToSavedList = props.addToSavedList;
     addToSavedList(movie)
-
   }
-
-    const { title, director, metascore, stars } = movie;
-
-
+  const { title, director, metascore, stars } = movie;
   return (
     <>
     {/* If The Movie Object is undefined we return a Div saying Sorry ... */}
-    { !movie || !title || !director || !metascore || !stars ? 
+    { !movie || !title || !director || !metascore || !stars 
+      ? 
         <WrongUrl><h2>Loading movie information...</h2></WrongUrl>  
       :
 

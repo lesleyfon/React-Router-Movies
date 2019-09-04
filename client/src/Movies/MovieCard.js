@@ -3,9 +3,7 @@ import React from 'react';
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
   function handleSave(){
-    console.log(props)
-    if (props.saveMovie) props.saveMovie()
-    
+    if (props.saveMovie) props.saveMovie();
   }
   return(
     <div className="save-wrapper">

@@ -19,23 +19,16 @@ const MovieList = props => {
     getMovies();
   }, []);
 
-  function addToSavedList(){
-    axios.post('http://localhost:5000/api/movies')
-      .then(res=>{
-        console.log(res)
-      }).catch(err=> new Error('Server Error', err))
-  }
   return (
     
     <div className="movie-list">
       {movies.map(movie => (
         <Link 
-          to={`/movies/${movie.id}`}
-        
-          key={movie.id + 1}
+          to ={ `/movies/${movie.id}` }
+          key={ movie.id + 1 }
           >
           <MovieCard 
-          movie={movie} 
+            movie={ movie } 
           />
         </Link>
       ))}
