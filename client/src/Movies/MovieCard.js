@@ -2,7 +2,11 @@ import React from 'react';
 
 const MovieCard = props => {
   const { title, director, metascore, stars } = props.movie;
-  console.log(title)
+  function handleSave(){
+    console.log(props)
+    if (props.saveMovie) props.saveMovie()
+    
+  }
   return(
     <div className="save-wrapper">
       <div className="movie-card">
@@ -21,7 +25,7 @@ const MovieCard = props => {
           </div>
         ))}
       </div>
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick ={handleSave}>Save</div>
     </div>
   );
 };

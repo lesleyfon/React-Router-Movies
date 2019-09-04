@@ -16,9 +16,15 @@ const MovieList = props => {
           console.error('Server Error', error);
         });
     }
-    
     getMovies();
   }, []);
+
+  function addToSavedList(){
+    axios.post('http://localhost:5000/api/movies')
+      .then(res=>{
+        console.log(res)
+      }).catch(err=> new Error('Server Error', err))
+  }
   return (
     
     <div className="movie-list">
@@ -28,8 +34,9 @@ const MovieList = props => {
         
           key={movie.id + 1}
           >
-          {console.log(movie)}
-          <MovieCard movie={movie} />
+          <MovieCard 
+          movie={movie} 
+          />
         </Link>
       ))}
     </div>

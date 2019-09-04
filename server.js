@@ -63,6 +63,7 @@ app.get('/api/movies/:id', (req, res) => {
 });
 
 app.post('/api/movies', (req, res) => {
+	console.log('hello')
 	if (req.body.id !== undefined) movies.push(req.body);
 	res.status(201).json(movies);
 });
