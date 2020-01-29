@@ -3,8 +3,9 @@ const bodyParser = require('body-parser');
 const CORS = require('cors');
 
 const app = express();
-
+//body parser
 app.use(bodyParser.json());
+//cors
 app.use(CORS());
 
 const movies = [
@@ -62,6 +63,7 @@ app.get('/api/movies/:id', (req, res) => {
 });
 
 app.post('/api/movies', (req, res) => {
+	console.log('hello')
 	if (req.body.id !== undefined) movies.push(req.body);
 	res.status(201).json(movies);
 });
